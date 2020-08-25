@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="962a7a70-7edf-414d-a948-d7e9974f19c1" name="Default Changelist" comment="" />
+    <list default="true" id="962a7a70-7edf-414d-a948-d7e9974f19c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/classifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/vectorizer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/train.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/validate.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/log_proba/9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +59,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/dataset.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/preprocess.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1gDY53Uc02Rubt4KTlGE0bfVIeV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -62,7 +97,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.model">
+  <component name="RunManager" selected="Python.test">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -219,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.model" />
         <item itemvalue="Python.data_load" />
         <item itemvalue="Python.model_ensemble" />
         <item itemvalue="Python.preprocess" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -245,19 +280,33 @@
       <workItem from="1598253728635" duration="157000" />
       <workItem from="1598253897855" duration="3007000" />
       <workItem from="1598257657836" duration="2840000" />
-      <workItem from="1598315870348" duration="6472000" />
+      <workItem from="1598315870348" duration="7776000" />
+      <workItem from="1598335652012" duration="6060000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PurchaseTag$model_ensemble.coverage" NAME="model_ensemble Coverage Results" MODIFIED="1598321846198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PurchaseTag$data_load.coverage" NAME="data_load Coverage Results" MODIFIED="1598323374377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PurchaseTag$test.coverage" NAME="test Coverage Results" MODIFIED="1598252420373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PurchaseTag$data_load.coverage" NAME="data_load Coverage Results" MODIFIED="1598337948445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PurchaseTag$dataset.coverage" NAME="dataset Coverage Results" MODIFIED="1598257190277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PurchaseTag$test.coverage" NAME="test Coverage Results" MODIFIED="1598342973069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PurchaseTag$preprocess.coverage" NAME="preprocess Coverage Results" MODIFIED="1598261825541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PurchaseTag$model.coverage" NAME="model Coverage Results" MODIFIED="1598323566758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PurchaseTag$model.coverage" NAME="model Coverage Results" MODIFIED="1598342239381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
