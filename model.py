@@ -41,8 +41,8 @@ jll = clf.predict_proba(X_validate)  # joint likelihood
 y_pred = clf.classes_[np.nanargmax(jll, axis=1)]
 max_proba = np.nanmax(jll, axis=1)
 
-if not os.path.isdir('output'):
-    os.mkdir('output')
+if not os.path.isdir('bin'):
+    os.mkdir('bin')
 
 # trade off between acurry and recall
 # search best decision boundry for each category
@@ -72,18 +72,18 @@ def search(persistence):
         y_pred[(max_proba < threshold[idx_max_f1])
                & (y_pred == categoryid)] = None
     if persistence:
-        with codecs.open('output/boundary.json', encoding='utf-8', mode='w') as f:
+        with codecs.open('bin/boundary.json', encoding='utf-8', mode='w') as f:
             json.dump(obj=boundary_of_category, fp=f, ensure_ascii=False, indent=4, separators=(',', ': '))
 
 search(True)
 
-
-with open('output/report.txt', 'w') as f:
+if not os.path.isdir('output'):
+    os.mkdir('output')
+with open('output/validate_report.txt', 'w') as f:
     print(metrics.classification_report(y_true, y_pred), file=f)
 
 # model persistence in binary
-if not os.path.isdir('bin'):
-    os.mkdir('bin')
+
 joblib.dump(vectorizer, 'bin/tfidf')
 joblib.dump(clf, 'bin/classifier')
 

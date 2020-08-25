@@ -15,14 +15,14 @@ def preprocess(cells):
     return u' '.join(segmented)
 
 def filter(row):
-    with open('output/boundary.json') as f:
+    with open('bin/boundary.json') as f:
         boundary = json.load(f)
-    if row['proba'] >= boundary[row['categoryid']].__getitem__(0):
-        return row['categoryid']
+    if row['proba'] >= boundary[row['predicted_categoryid']].__getitem__(0):
+        return row['predicted_categoryid']
     else:
         return None
 
-test = pd.read_csv('data/test.csv',names =['product'], encoding='utf-8')
+test = pd.read_csv('data/test.csv',names =['category','product'], encoding='utf-8')
 
 print('Preprocessing...')
 test.fillna('')
@@ -33,7 +33,7 @@ print('Predicting...')
 tfidf = joblib.load('bin/tfidf')
 clf = joblib.load('bin/classifier')
 
-test['categoryid'] = test['product'].map(lambda x: '')
+test['predicted_categoryid'] = test['product'].map(lambda x: '')
 test['proba'] = test['product'].map(lambda x: .0)
 
 step = 20000
@@ -42,16 +42,18 @@ for idx in np.arange(0, test.shape[0], step):
     jll = clf.predict_proba(X)  # joint likelihood
     y_pred = clf.classes_[np.nanargmax(jll, axis=1)]
     max_proba = np.nanmax(jll, axis=1)
-    test['categoryid'].iloc[idx: idx + step] = y_pred
+    test['predicted_categoryid'].iloc[idx: idx + step] = y_pred
     test['proba'].iloc[idx: idx + step] = max_proba
 
 # filter by decision boundary
-test['categoryid'] = test[['categoryid', 'proba']].apply(filter, axis=1)
+test['predicted_categoryid'] = test[['predicted_categoryid', 'proba']].apply(filter, axis=1)
 
-test['categoryname'] = test['categoryid'].map(category_dict)
+test['predicted_category'] = test['predicted_categoryid'].map(category_dict)
 
 if not os.path.isdir('output'):
     os.mkdir('output')
 
 print('Outputing...')
-test[['categoryid', 'categoryname', 'product']].to_csv('output/result.csv', encoding='utf-8', index=False)
+test[['predicted_categoryid','predicted_category','category','product']].to_csv('output/test_result.csv', encoding='utf-8', index=False)
+
+print('Finish')
