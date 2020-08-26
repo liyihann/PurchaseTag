@@ -8,7 +8,7 @@ category_dict = {'1':'数码', '2':'珠宝', '3':'玩具', '4':'钟表', '5':'�
 
 def preprocess(text):
     pattern = re.compile(r'[\u4e00-\u9fff]+')
-    filtered = "".join(re.findall(pattern, text))
+    filtered = "".join(re.findall(pattern, np.unicode(text)))
     segmented = u' '.join(jieba.lcut(filtered))
     return segmented
 
@@ -20,26 +20,24 @@ def filter(predicted_cateid,probability):
     else:
         return None
 
-product = "惠普HP Deskjet 1050 J410a彩色喷墨一体机(打印 复印 扫描)"
+product = "PAWCARES 柏可心 口腔护理套餐A 小型宠物狗犬用 去除口腔异味4"
 
 
 preprocessed = preprocess(product)
-print(preprocessed)
 
 tfidf = joblib.load('bin/tfidf')
 clf = joblib.load('bin/classifier')
 
-X = tfidf.transform([product])
-print(X)
-jll = clf.predict_proba(X)  # joint likelihood
-print(jll)
-y_pred = clf.classes_[np.nanargmax(jll, axis=1)] # predicted_categoryid
-print(y_pred)
-max_proba = np.nanmax(jll, axis=1)
-print(max_proba)
+X = tfidf.transform([preprocessed])
 
-# predicted_categoryid = filter(y_pred.__getitem__(0),max_proba)
-# predicted_category = category_dict.__getitem__(predicted_categoryid)
-#
-#
-# print(predicted_category)
+jll = clf.predict_proba(X)  # joint likelihood
+
+y_pred = clf.classes_[np.nanargmax(jll, axis=1)] # predicted_categoryid
+
+max_proba = np.nanmax(jll, axis=1)
+
+predicted_categoryid = filter(y_pred.__getitem__(0),max_proba)
+
+if predicted_categoryid!=None:
+    predicted_category = category_dict.__getitem__(predicted_categoryid)
+    print(predicted_category)

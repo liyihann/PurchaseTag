@@ -4,7 +4,7 @@ from sklearn.utils import shuffle
 
 
 
-def get_train_validate_data():
+def get_train_validate_data(s):
     df = pd.read_csv('data/data_preprocessed.csv', header=None, error_bad_lines=False,
                      dtype=object,
                      names=['product', 'categoryid'])
@@ -14,7 +14,7 @@ def get_train_validate_data():
     grouped = df.groupby(by=['categoryid'])
     for categoryid, group in grouped:
         group = group.reset_index(drop=True)
-        sampled_group = np.random.choice(group.shape[0], size=1000)
+        sampled_group = np.random.choice(group.shape[0], size=s)
         bag.append(group.iloc[sampled_group])
     resampled_data = pd.concat(bag)
 
@@ -27,7 +27,7 @@ def get_train_validate_data():
 
 
 
-def get_test_data():
+def get_test_data(s):
     # test data
     df_test = pd.read_csv('data/data.csv', header=None, error_bad_lines=False,
                      dtype=object,
@@ -38,7 +38,7 @@ def get_test_data():
     grouped = df_test.groupby(by=['category'])
     for categoryid, group in grouped:
         group = group.reset_index(drop=True)
-        sampled_group = np.random.choice(group.shape[0], size=200)
+        sampled_group = np.random.choice(group.shape[0], size=s)
         bag.append(group.iloc[sampled_group])
 
     resampled_data = pd.concat(bag)[['category','product']]
@@ -46,6 +46,6 @@ def get_test_data():
     resampled_data.to_csv('data/test.csv', index=False, encoding='utf-8',header=None)
 
 
-# get_train_validate_data()
+# get_train_validate_data(5000)
 
-get_test_data()
+get_test_data(500)
